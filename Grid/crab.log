@@ -1,0 +1,25 @@
+DEBUG 2021-04-13 11:52:25.263 UTC: 	 CRAB Client version: v3.210127
+DEBUG 2021-04-13 11:52:25.264 UTC: 	 Running on: Linux lxplus713.cern.ch 3.10.0-1160.15.2.el7.x86_64 #1 SMP Wed Feb 3 15:06:38 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-04-13 11:52:25.264 UTC: 	 Executing command: 'submit'
+DEBUG 2021-04-13 11:52:25.265 UTC: 	 Found CRAB cache file /afs/cern.ch/user/d/dmf/.crab3
+DEBUG 2021-04-19 08:55:22.897 UTC: 	 CRAB Client version: v3.210323
+DEBUG 2021-04-19 08:55:22.897 UTC: 	 Running on: Linux lxplus701.cern.ch 3.10.0-1160.21.1.el7.x86_64 #1 SMP Tue Mar 16 18:28:22 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-04-19 08:55:22.897 UTC: 	 Executing command: 'submit'
+DEBUG 2021-04-19 08:55:22.898 UTC: 	 Found CRAB cache file /afs/cern.ch/user/d/dmf/.crab3
+DEBUG 2021-04-19 08:55:22.899 UTC: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2021-04-19 12:54:29.887 UTC: 	 CRAB Client version: v3.210323
+DEBUG 2021-04-19 12:54:29.888 UTC: 	 Running on: Linux lxplus775.cern.ch 3.10.0-1160.15.2.el7.x86_64 #1 SMP Wed Feb 3 15:06:38 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-04-19 12:54:29.888 UTC: 	 Executing command: 'submit'
+DEBUG 2021-04-19 12:54:29.889 UTC: 	 Found CRAB cache file /afs/cern.ch/user/d/dmf/.crab3
+DEBUG 2021-04-20 09:00:03.650 UTC: 	 CRAB Client version: v3.210323
+DEBUG 2021-04-20 09:00:03.651 UTC: 	 Running on: Linux lxplus772.cern.ch 3.10.0-1160.15.2.el7.x86_64 #1 SMP Wed Feb 3 15:06:38 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-04-20 09:00:03.651 UTC: 	 Executing command: 'submit'
+DEBUG 2021-04-20 09:00:03.651 UTC: 	 Found CRAB cache file /afs/cern.ch/user/d/dmf/.crab3
+DEBUG 2021-04-20 09:00:43.492 UTC: 	 CRAB Client version: v3.210323
+DEBUG 2021-04-20 09:00:43.493 UTC: 	 Running on: Linux lxplus772.cern.ch 3.10.0-1160.15.2.el7.x86_64 #1 SMP Wed Feb 3 15:06:38 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-04-20 09:00:43.493 UTC: 	 Executing command: 'submit'
+DEBUG 2021-04-20 09:00:43.493 UTC: 	 Found CRAB cache file /afs/cern.ch/user/d/dmf/.crab3
+DEBUG 2021-04-20 09:01:09.626 UTC: 	 CRAB Client version: v3.210323
+DEBUG 2021-04-20 09:01:09.627 UTC: 	 Running on: Linux lxplus772.cern.ch 3.10.0-1160.15.2.el7.x86_64 #1 SMP Wed Feb 3 15:06:38 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2021-04-20 09:01:09.627 UTC: 	 Executing command: 'submit'
+DEBUG 2021-04-20 09:01:09.627 UTC: 	 Found CRAB cache file /afs/cern.ch/user/d/dmf/.crab3
