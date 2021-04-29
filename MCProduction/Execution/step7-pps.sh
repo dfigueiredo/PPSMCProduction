@@ -25,9 +25,12 @@ cd PPtoPPWWjets/
 cd ..
 git clone https://github.com/cms-jet/JetToolbox.git JMEAnalysis/JetToolbox -b jetToolbox_102X_v3
 
-curl -s -k https://raw.githubusercontent.com/dfigueiredo/PPSFramework/main/FrameworkScripts/jetToolbox_cff.py --retry 3 --create-dirs -o JMEAnalysis/JetToolbox/python/jetToolbox_cff.py
+curl -s -k https://raw.githubusercontent.com/dfigueiredo/PPSMCProduction/master/FrameworkScripts/jetToolbox_cff.py --retry 3 --create-dirs -o JMEAnalysis/JetToolbox/python/jetToolbox_cff.py
 [ -s JMEAnalysis/JetToolbox/python/jetToolbox_cff.py ] || exit $?;
 git clone https://github.com/AndreaBellora/protonPreMix.git
 scram b -j8
 
 cd ../..
+
+curl -s -k https://raw.githubusercontent.com/dfigueiredo/PPSMCProduction/master/FrameworkScripts/PPS-Objects.py --retry 3 -o PPS-Objects.py
+[ -s PPS-Objects.py ] || exit $?;

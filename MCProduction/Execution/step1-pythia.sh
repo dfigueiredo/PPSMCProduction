@@ -16,7 +16,7 @@ cd CMSSW_10_6_18/src
 eval `scram runtime -sh`
 
 # Download fragment from McM
-curl -s -k https://raw.githubusercontent.com/dfigueiredo/PPSFramework/main/MCProduction/Configuration/PYTHIA8_SingleDiffractiveTop_13TeV_cff.py --retry 3 --create-dirs -o Configuration/GenProduction/python/pythia8-singlediffraction-top-fragment.py
+curl -s -k https://raw.githubusercontent.com/dfigueiredo/PPSMCProduction/master/MCProduction/Configuration/PYTHIA8_SingleDiffractiveTop_13TeV_cff.py --retry 3 --create-dirs -o Configuration/GenProduction/python/pythia8-singlediffraction-top-fragment.py
 [ -s Configuration/GenProduction/python/pythia8-singlediffraction-top-fragment.py ] || exit $?;
 scram b
 cd ../..
