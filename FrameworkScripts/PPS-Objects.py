@@ -325,6 +325,8 @@ def RemoveModules(pr):
 (ctpps_2016 & ~ctpps_2017 & ~ctpps_2018).toModify(process, RemoveModules)
 
 # rng service for efficiency
+
+''' 
 process.load("protonPreMix.protonPreMix.ppsEfficiencyProducer_cfi")
 
 process.RandomNumberGeneratorService.ppsEfficiencyProducer = cms.PSet(initialSeed = cms.untracked.uint32(43))
@@ -340,6 +342,7 @@ if YEAR == 2017:
 if YEAR == 2018:
   process.ppsEfficiencyProducer.efficiencyFileName_Near = cms.string("/eos/project/c/ctpps/subsystems/Pixel/RPixTracking/pixelEfficiencies_radiation.root")
   process.ppsEfficiencyProducer.efficiencyFileName_Far = cms.string("/eos/project/c/ctpps/subsystems/Pixel/RPixTracking/pixelEfficiencies_radiation.root")
+'''
 
 #########################                                                                                                                                                           
 # Configure Analyzer
