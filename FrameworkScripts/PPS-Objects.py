@@ -104,7 +104,8 @@ if MC == True and YEAR == 2018:
   )
 
 process.source = cms.Source("PoolSource",
-    fileNames = cms.untracked.vstring("file:../../../../../../TOP-RunIISummer20UL17MiniAOD-00006.root")
+#    fileNames = cms.untracked.vstring("/store/user/dmf/crab_dmf_2021-04-28_UTC11-16-01/PYTHIA8-SD-TOP-GEN/PYTHIA8-SD-TOP-MINIAOD-13TEV/210428_091727/0000/RunIISummer20UL17MiniAOD_1.root")
+    fileNames = cms.untracked.vstring("/store/user/dmf/crab_dmf_2021-04-28_UTC11-16-01/PYTHIA8-SD-TOP-GEN/PYTHIA8-SD-TOP-MINIAOD-13TEV/210428_091727/0000/RunIISummer20UL17MiniAOD_103.root")
 )
 
 # add pre-mixing of recHits
@@ -113,14 +114,14 @@ pu_ERA = ERA
 if len(ERA) == 2 and YEAR == 2018:
   pu_ERA = ERA[0]
 
-from pileupSamples_cfi import *
-print "Mixing PU samples: "
-print "\n".join(pileupSamples(YEAR,pu_ERA)[:3])
-print "...\n" 
+#from pileupSamples_cfi import *
+#print "Mixing PU samples: "
+#print "\n".join(pileupSamples(YEAR,pu_ERA)[:3])
+#print "...\n" 
 
-process.load("protonPreMix.protonPreMix.ctppsPreMixProducer_cfi")
-process.ctppsPreMixProducer.PUFilesList = cms.vstring(*pileupSamples(YEAR,pu_ERA))
-process.ctppsPreMixProducer.Verbosity = 0
+#process.load("protonPreMix.protonPreMix.ctppsPreMixProducer_cfi")
+#process.ctppsPreMixProducer.PUFilesList = cms.vstring(*pileupSamples(YEAR,pu_ERA))
+#process.ctppsPreMixProducer.Verbosity = 0
 
 import FWCore.PythonUtilities.LumiList as LumiList
 # use JSON for 2018 PU in order to mix the right events with the right period

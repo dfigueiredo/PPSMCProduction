@@ -34,3 +34,9 @@ cd ../..
 
 curl -s -k https://raw.githubusercontent.com/dfigueiredo/PPSMCProduction/master/FrameworkScripts/PPS-Objects.py --retry 3 -o PPS-Objects.py
 [ -s PPS-Objects.py ] || exit $?;
+
+
+wget https://github.com/dfigueiredo/PPSMCProduction/raw/master/MCProduction/EfficiencyPlots/CrossingAngles2016.root -O CrossingAngles2016.root
+wget https://github.com/dfigueiredo/PPSMCProduction/raw/master/MCProduction/EfficiencyPlots/CrossingAngles2017.root -O CrossingAngles2017.root
+wget https://github.com/dfigueiredo/PPSMCProduction/raw/master/MCProduction/EfficiencyPlots/CrossingAngles2018.root -O CrossingAngles2018.root
+
