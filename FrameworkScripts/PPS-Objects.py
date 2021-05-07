@@ -1,20 +1,27 @@
+#flake8: noqa
+
 import FWCore.ParameterSet.Config as cms
 import sys
 
-import FWCore.ParameterSet.VarParsing as VarParsing
-options = VarParsing.VarParsing ()
-options.register('year',
-  '',
-  VarParsing.VarParsing.multiplicity.singleton,
-  VarParsing.VarParsing.varType.int,
-  "year")
-options.register('era',
-  '',
-  VarParsing.VarParsing.multiplicity.singleton,
-  VarParsing.VarParsing.varType.string,
-  "CMS era")
+# The line below always has to be included to make VarParsing work 
+from FWCore.ParameterSet.VarParsing import VarParsing
 
-options.parseArguments() 
+# In teh line below 'analysis' is an instance of VarParsing object 
+options = VarParsing ()
+
+# Here we have defined our own two VarParsing options 
+# add a list of strings for events to process
+options.register ('era',
+				  'B',
+				  VarParsing.multiplicity.singleton,
+				  VarParsing.varType.string,
+				  "era")
+options.register ('year',
+				  2017,
+				  VarParsing.multiplicity.singleton,
+				  VarParsing.varType.int,
+				  "year")
+options.parseArguments()
 
 MC=True
 YEAR=options.year
@@ -170,7 +177,7 @@ process.MessageLogger.logFile = cms.untracked.PSet(
   threshold = cms.untracked.string('INFO')
 )
 
-process.options   = cms.untracked.PSet( wantSummary = cms.untracked.bool(True) )
+process.options   = cms.untracked.PSet( wantSummary = cms.untracked.bool(False) )
 
 '''
 ### ADD SOME NEW JET COLLECTIONS                                                                                                                                           
@@ -325,69 +332,66 @@ def RemoveModules(pr):
 (ctpps_2016 & ~ctpps_2017 & ~ctpps_2018).toModify(process, RemoveModules)
 
 # rng service for efficiency
+#process.load("protonPreMix.protonPreMix.ppsEfficiencyProducer_cfi")
 
-''' 
-process.load("protonPreMix.protonPreMix.ppsEfficiencyProducer_cfi")
+#process.RandomNumberGeneratorService.ppsEfficiencyProducer = cms.PSet(initialSeed = cms.untracked.uint32(43))
+#process.ppsEfficiencyProducer.year = cms.int32(YEAR)
+#process.ppsEfficiencyProducer.era = cms.string(ERA)
 
-process.RandomNumberGeneratorService.ppsEfficiencyProducer = cms.PSet(initialSeed = cms.untracked.uint32(43))
-process.ppsEfficiencyProducer.year = cms.int32(YEAR)
-process.ppsEfficiencyProducer.era = cms.string(ERA)
-
-if YEAR == 2016:
-  process.ppsEfficiencyProducer.efficiencyFileName_Near = cms.string("/eos/project/c/ctpps/subsystems/Strips/StripsTracking/PreliminaryEfficiencies_July132020_1D2DMultiTrack.root")
-  process.ppsEfficiencyProducer.efficiencyFileName_Far = cms.string("/eos/project/c/ctpps/subsystems/Strips/StripsTracking/PreliminaryEfficiencies_July132020_1D2DMultiTrack.root")
-if YEAR == 2017:
-  process.ppsEfficiencyProducer.efficiencyFileName_Near = cms.string("/eos/project/c/ctpps/subsystems/Strips/StripsTracking/PreliminaryEfficiencies_July132020_1D2DMultiTrack.root")
-  process.ppsEfficiencyProducer.efficiencyFileName_Far = cms.string("/eos/project/c/ctpps/subsystems/Pixel/RPixTracking/pixelEfficiencies_singleRP.root")
-if YEAR == 2018:
-  process.ppsEfficiencyProducer.efficiencyFileName_Near = cms.string("/eos/project/c/ctpps/subsystems/Pixel/RPixTracking/pixelEfficiencies_radiation.root")
-  process.ppsEfficiencyProducer.efficiencyFileName_Far = cms.string("/eos/project/c/ctpps/subsystems/Pixel/RPixTracking/pixelEfficiencies_radiation.root")
-'''
+#if YEAR == 2016:
+#  process.ppsEfficiencyProducer.efficiencyFileName_Near = cms.string("/eos/project/c/ctpps/subsystems/Strips/StripsTracking/PreliminaryEfficiencies_July132020_1D2DMultiTrack.root")
+#  process.ppsEfficiencyProducer.efficiencyFileName_Far = cms.string("/eos/project/c/ctpps/subsystems/Strips/StripsTracking/PreliminaryEfficiencies_July132020_1D2DMultiTrack.root")
+#if YEAR == 2017:
+#  process.ppsEfficiencyProducer.efficiencyFileName_Near = cms.string("/eos/project/c/ctpps/subsystems/Strips/StripsTracking/PreliminaryEfficiencies_July132020_1D2DMultiTrack.root")
+#  process.ppsEfficiencyProducer.efficiencyFileName_Far = cms.string("/eos/project/c/ctpps/subsystems/Pixel/RPixTracking/pixelEfficiencies_singleRP.root")
+#if YEAR == 2018:
+#  process.ppsEfficiencyProducer.efficiencyFileName_Near = cms.string("/eos/project/c/ctpps/subsystems/Pixel/RPixTracking/pixelEfficiencies_radiation.root")
+#  process.ppsEfficiencyProducer.efficiencyFileName_Far = cms.string("/eos/project/c/ctpps/subsystems/Pixel/RPixTracking/pixelEfficiencies_radiation.root")
 
 #########################                                                                                                                                                           
 # Configure Analyzer
 #########################                                                                                                                                                           
-process.load("PPtoPPWWjets.PPtoPPWWjets.CfiFile_cfi")
-process.TFileService = cms.Service("TFileService", fileName = cms.string("output.root"))
+#process.load("PPtoPPWWjets.PPtoPPWWjets.CfiFile_cfi")
+#process.TFileService = cms.Service("TFileService", fileName = cms.string("output.root"))
 
-process.demo = cms.EDAnalyzer('PPtoPPWWjets')
+#process.demo = cms.EDAnalyzer('PPtoPPWWjets')
 
-if YEAR == 2016:
-  process.load("PPtoPPWWjets.PPtoPPWWjets.HLTFilter2016_cfi")
-  process.hltFilter.TriggerResultsTag = cms.InputTag("TriggerResults","","HLT")
-if YEAR == 2017:
-  process.load("PPtoPPWWjets.PPtoPPWWjets.HLTFilter_cfi")
-  process.hltFilter.TriggerResultsTag = cms.InputTag("TriggerResults","","HLT")
-if YEAR == 2018:
-  process.load("PPtoPPWWjets.PPtoPPWWjets.HLTFilter2018_cfi")
-  process.hltFilter.TriggerResultsTag = cms.InputTag("TriggerResults","","HLT")
+#if YEAR == 2016:
+  #process.load("PPtoPPWWjets.PPtoPPWWjets.HLTFilter2016_cfi")
+  #process.hltFilter.TriggerResultsTag = cms.InputTag("TriggerResults","","HLT")
+#if YEAR == 2017:
+  #process.load("PPtoPPWWjets.PPtoPPWWjets.HLTFilter_cfi")
+  #process.hltFilter.TriggerResultsTag = cms.InputTag("TriggerResults","","HLT")
+#if YEAR == 2018:
+  #process.load("PPtoPPWWjets.PPtoPPWWjets.HLTFilter2018_cfi")
+  #process.hltFilter.TriggerResultsTag = cms.InputTag("TriggerResults","","HLT")
 
 
-if MC == True and YEAR == 2016:
-  process.demo.dataPileupFile = cms.string("PUHistos_data_2016.root")
-  process.demo.mcPileupFile = cms.string("PUHistos_mc_2016.root")
-if MC == True and YEAR == 2017:
-  process.demo.dataPileupFile = cms.string("PUHistos_data_2017.root")
-  process.demo.mcPileupFile = cms.string("PUHistos_mc_2017.root")
+#if MC == True and YEAR == 2016:
+  #process.demo.dataPileupFile = cms.string("PUHistos_data_2016.root")
+  #process.demo.mcPileupFile = cms.string("PUHistos_mc_2016.root")
+#if MC == True and YEAR == 2017:
+  #process.demo.dataPileupFile = cms.string("PUHistos_data_2017.root")
+  #process.demo.mcPileupFile = cms.string("PUHistos_mc_2017.root")
   # Special cases for buggy datasets in 2017 MC                                                                                                
   #    process.demo.mcPileupFile = cms.string("PUHistos_mc_2017_QCDPt300to470.root")
   #    process.demo.mcPileupFile = cms.string("PUHistos_mc_2017_QCDPt600to800.root")
   #    process.demo.mcPileupFile = cms.string("PUHistos_mc_2017_QCDPt1000to1400.root")                                                         
   #    process.demo.mcPileupFile = cms.string("PUHistos_mc_2017_Wjets.root")
   #    process.demo.mcPileupFile = cms.string("PUHistos_mc_2017_Zjets.root")     
-if MC == True and YEAR == 2018:
-  process.demo.dataPileupFile = cms.string("PUHistos_data_2018.root")
-  process.demo.mcPileupFile = cms.string("PUHistos_mc_2018.root")
+#if MC == True and YEAR == 2018:
+#  process.demo.dataPileupFile = cms.string("PUHistos_data_2018.root")
+#  process.demo.mcPileupFile = cms.string("PUHistos_mc_2018.root")
 
-process.demo.jetAK8CHSCollection = cms.InputTag("slimmedJetsAK8JetId")
-process.demo.ppsRecoProtonSingleRPTag = cms.InputTag("ctppsProtons", "singleRP")
-# process.demo.ppsRecoProtonMultiRPTag = cms.InputTag("ctppsProtons", "multiRP")
-process.demo.ppsRecoProtonMultiRPTag = cms.InputTag("ppsEfficiencyProducer", "multiRP")
-process.demo.isMC = cms.bool(MC)
-process.demo.doMCTheorySystematics = cms.bool(DoTheorySystematics)
-process.demo.useMCProtons = cms.bool(UseMCProtons)
-process.demo.year = cms.int32(YEAR)
-process.demo.era = cms.string(ERA)
+#process.demo.jetAK8CHSCollection = cms.InputTag("slimmedJetsAK8JetId")
+#process.demo.ppsRecoProtonSingleRPTag = cms.InputTag("ctppsProtons", "singleRP")
+## process.demo.ppsRecoProtonMultiRPTag = cms.InputTag("ctppsProtons", "multiRP")
+#process.demo.ppsRecoProtonMultiRPTag = cms.InputTag("ppsEfficiencyProducer", "multiRP")
+#process.demo.isMC = cms.bool(MC)
+#process.demo.doMCTheorySystematics = cms.bool(DoTheorySystematics)
+#process.demo.useMCProtons = cms.bool(UseMCProtons)
+#process.demo.year = cms.int32(YEAR)
+#process.demo.era = cms.string(ERA)
 
 process.maxEvents = cms.untracked.PSet(
   # input = cms.untracked.int32(20)
