@@ -286,17 +286,26 @@ process.ctppsBeamParametersESSource.vtxStddevZ = 0
 #process.ctppsBeamParametersESSource.vtxOffsetY45 = -0.6924 * 1E-1
 #process.ctppsBeamParametersESSource.vtxOffsetZ45 = -8.1100 * 1E-1
 # These should be the vtx shift values for 2017...
-process.ctppsBeamParametersESSource.vtxOffsetX45 = +0.024793
-process.ctppsBeamParametersESSource.vtxOffsetY45 = -0.0692861
-process.ctppsBeamParametersESSource.vtxOffsetZ45 = -7.89895
+#process.ctppsBeamParametersESSource.vtxOffsetX45 = +0.024793
+#process.ctppsBeamParametersESSource.vtxOffsetY45 = -0.0692861
+#process.ctppsBeamParametersESSource.vtxOffsetZ45 = -7.89895
 # end JH
 
 process.ctppsLHCInfoRandomXangleESSource.generateEveryNEvents = 1
 if MC == True and YEAR == 2016:
+    process.ctppsBeamParametersESSource.vtxOffsetX45 = -1.048 * 1E-1
+    process.ctppsBeamParametersESSource.vtxOffsetY45 = -1.686 * 1E-1
+    process.ctppsBeamParametersESSource.vtxOffsetZ45 = +10.04 * 1E-1
     process.ctppsLHCInfoRandomXangleESSource.xangleHistogramFile = "CrossingAngles2016.root"
 if MC == True and YEAR == 2017:
+    process.ctppsBeamParametersESSource.vtxOffsetX45 = +0.24793  * 1E-1
+    process.ctppsBeamParametersESSource.vtxOffsetY45 = -0.692861 * 1E-1
+    process.ctppsBeamParametersESSource.vtxOffsetZ45 = -7.89895  * 1E-1
     process.ctppsLHCInfoRandomXangleESSource.xangleHistogramFile = "CrossingAngles2017.root"
 if MC == True and YEAR == 2018:
+    process.ctppsBeamParametersESSource.vtxOffsetX45 = -0.1078 * 1E-1
+    process.ctppsBeamParametersESSource.vtxOffsetY45 = -0.4189 * 1E-1
+    process.ctppsBeamParametersESSource.vtxOffsetZ45 = -0.2488 * 1E-1
     process.ctppsLHCInfoRandomXangleESSource.xangleHistogramFile = "CrossingAngles2018.root"
 
 process.ctppsLHCInfoRandomXangleESSource.xangleHistogramObject = "hxang"
