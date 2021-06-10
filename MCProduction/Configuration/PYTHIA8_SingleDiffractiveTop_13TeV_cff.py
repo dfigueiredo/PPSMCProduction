@@ -19,6 +19,7 @@ generator = cms.EDFilter("Pythia8GeneratorFilter",
                         'PDF:PomSet = 4'
         ),
         py8ProcessSettings = cms.vstring(
+                                        # 'Top:all = on'
                                         'Top:gg2ttbar = on',
                                         'Top:qqbar2ttbar = on',
                                         'Top:ffbar2ttbar(s:gmZ) = on',
