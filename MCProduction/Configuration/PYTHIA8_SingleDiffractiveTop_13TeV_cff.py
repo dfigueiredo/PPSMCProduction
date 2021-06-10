@@ -10,9 +10,9 @@ generator = cms.EDFilter("Pythia8GeneratorFilter",
     PythiaParameters = cms.PSet(
         py8DiffSettings = cms.vstring(
                         'HardQCD:all = on',
-                        'PhaseSpace:pTHatMin = 80.' # changing top pT
+                        'Diffraction:hardDiffSide = 0',
+                        'PhaseSpace:pTHatMin = 80.', # changing top pT
                         'Diffraction:doHard = on',
-                        'Diffraction:sampleType = 4',
                         'Diffraction:sampleType = 3',
                         'SigmaDiffractive:PomFlux = 7',
                         'PDF:PomSet = 6',
@@ -29,4 +29,3 @@ generator = cms.EDFilter("Pythia8GeneratorFilter",
                                    )
     )
 )
-
