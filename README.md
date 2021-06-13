@@ -20,14 +20,17 @@ cd working/
 source step[1-6]*.sh 
 ```
 
-The script will download the needed CMSSW version and produce the config file using cmsDriver. For the LHE file produced from your own Toy MC or tuned MC (first step of the generation), it is adviced to copy it to eos for further use with crab. For more instructions, check the [package](https://github.com/dfigueiredo/JobSubmitter).
+The script will download the needed CMSSW version and produce the config file using cmsDriver. For the LHE file produced from your own Toy MC or tuned MC (first step of the generation), it is adviced to copy it to eos for further use with crab. For more instructions, check the [package](https://github.com/dfigueiredo/JobSubmitter). Different MC configs and flags are placed on "MCProduction/Configuration/". 
 
 ## Private Production
 
 | Monte-Carlo       | Script | Event Content |
 | ------------- |:-------------:|-------------:|
 | pythia      | source step1-pythia.sh | GEN |
+| ExHume      | source step1-exhume.sh | GEN |
+| pomwig      | source step1-pomwig.sh | GEN |
 | LHE Toy MC   | source step1-LHEGEN.sh | LHE, GEN |
 
 All the other scripts are common for both MC productions. Please, note that for LHE Toy MC, two configurations will be generated in the first step script. The first CMSSW configuration file  produces an EDM "LHEProducer" collection and the second CMSSW configuration file produces the GEN.
+
 
