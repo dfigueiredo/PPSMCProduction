@@ -24,7 +24,7 @@ curl -s -k https://cms-pdmv.cern.ch/mcm/public/restapi/requests/get_fragment/TOP
 #curl -s -k https://raw.githubusercontent.com/dfigueiredo/PPSMCProduction/master/MCProduction/Configuration/HERWIG_Hadronization_cff.py --retry 3 --create-dirs -o Configuration/GenProduction/python/RunIISummer20UL17LHEGEN-fragment.py
 
 # Customized Pythia Hadronization
-#curl -s -k https://raw.githubusercontent.com/dfigueiredo/PPSMCProduction/master/MCProduction/Configuration/PYTHIA_Hadronization_cff.py --retry 3 --create-dirs -o Configuration/GenProduction/python/RunIISummer20UL17LHEGEN-fragment.py
+#curl -s -k https://raw.githubusercontent.com/dfigueiredo/PPSMCProduction/master/MCProduction/Configuration/Pythia_Hadronization_cff.py --retry 3 --create-dirs -o Configuration/GenProduction/python/RunIISummer20UL17LHEGEN-fragment.py
 
 
 [ -s Configuration/GenProduction/python/RunIISummer20UL17LHEGEN-fragment.py ] || exit $?;
@@ -34,7 +34,7 @@ cd ../..
 EVENTS=1000
 
 # cmsDriver command, LHE
-cmsDriver.py Configuration/GenProduction/python/RunIISummer20UL17LHEGEN-fragment.py --python_filename RunIISummer20UL17LHE_cfg.py --eventcontent LHE --customise Configuration/DataProcessing/Utils.addMonitoring --datatier LHE --fileout file:RunIISummer20UL17LHE.root --conditions 106X_mc2017_realistic_v6 --step NONE --filein "lhe_file.lhe" --era Run2_2017 --no_exec --mc -n $EVENTS || exit $? ;
+cmsDriver.py Configuration/GenProduction/python/RunIISummer20UL17LHEGEN-fragment.py --python_filename RunIISummer20UL17LHE_cfg.py --eventcontent LHE --customise Configuration/DataProcessing/Utils.addMonitoring --datatier LHE --fileout file:RunIISummer20UL17LHE.root --conditions 106X_mc2017_realistic_v6 --step NONE --filein "/store/group/phys_exotica/PPS-Exo/LHESource/toy_mc_pps.lhe" --era Run2_2017 --no_exec --mc -n $EVENTS || exit $? ;
 
 # cmsDriver command, GEN
 cmsDriver.py Configuration/GenProduction/python/RunIISummer20UL17LHEGEN-fragment.py --python_filename RunIISummer20UL17GEN_cfg.py --eventcontent RAWSIM --customise Configuration/DataProcessing/Utils.addMonitoring --datatier GEN --fileout file:RunIISummer20UL17GEN.root --conditions 106X_mc2017_realistic_v6 --beamspot Realistic25ns13TeVEarly2017Collision --step GEN --geometry DB:Extended --filein file:RunIISummer20UL17LHE.root --era Run2_2017 --no_exec --mc -n $EVENTS || exit $? ;
