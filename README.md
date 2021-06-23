@@ -9,7 +9,9 @@ Download the package from git. After running the script to set the environment, 
 
 ```bash
 git clone https://github.com/dfigueiredo/PPSMCProduction
+cd PPSMCProduction
 source set_environment.sh
+PREPAREMCGENERATION <enter> (only for the first time to create your working folder)
 ```
 
 ## Usage
