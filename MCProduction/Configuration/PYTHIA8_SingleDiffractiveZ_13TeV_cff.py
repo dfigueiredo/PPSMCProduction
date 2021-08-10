@@ -18,11 +18,12 @@ generator = cms.EDFilter("Pythia8GeneratorFilter",
                         'PDF:PomSet = 6'  # 6 -> H1 2006 Fit B LO, 4 -> H1 2006 Fit B NLO
         ),
         py8ProcessSettings = cms.vstring(
-                                        # 'Top:all = on'
-                                        'Top:gg2ttbar = on',
-                                        'Top:qqbar2ttbar = on',
-                                        'Top:ffbar2ttbar(s:gmZ) = on',
-                                        'Top:gmgm2ttbar = on'
+                        'WeakSingleBoson:ffbar2gmZ = on',
+                        '23:onMode = off',
+                        '23:onIfAny = 13 -13',
+                        '23:onIfAny = 11 -11'
+
+
         ),
         parameterSets = cms.vstring( 'py8DiffSettings',
                                      'py8ProcessSettings'
