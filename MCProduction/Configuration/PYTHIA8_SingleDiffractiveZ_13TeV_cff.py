@@ -9,7 +9,6 @@ generator = cms.EDFilter("Pythia8GeneratorFilter",
 
     PythiaParameters = cms.PSet(
         py8DiffSettings = cms.vstring(
-                        'HardQCD:all = on',
                         'Diffraction:hardDiffSide = 0',
                         'PhaseSpace:pTHatMin = 80.', # changing top pT
                         'Diffraction:doHard = on',
@@ -18,12 +17,10 @@ generator = cms.EDFilter("Pythia8GeneratorFilter",
                         'PDF:PomSet = 6'  # 6 -> H1 2006 Fit B LO, 4 -> H1 2006 Fit B NLO
         ),
         py8ProcessSettings = cms.vstring(
-                        'WeakSingleBoson:ffbar2gmZ = on',
-                        '23:onMode = off',
-                        '23:onIfAny = 13 -13',
-                        '23:onIfAny = 11 -11'
-
-
+            'WeakSingleBoson:ffbar2gmZ = on',
+            'PhaseSpace:pTHatMin = 20.',
+            '23:onMode = off',
+            '23:onIfAny = 13' # pdgid(13): Muon, pdgid(11): Electron
         ),
         parameterSets = cms.vstring( 'py8DiffSettings',
                                      'py8ProcessSettings'
