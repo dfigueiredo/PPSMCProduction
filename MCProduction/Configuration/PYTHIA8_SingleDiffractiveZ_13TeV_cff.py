@@ -10,7 +10,6 @@ generator = cms.EDFilter("Pythia8GeneratorFilter",
     PythiaParameters = cms.PSet(
         py8DiffSettings = cms.vstring(
                         'Diffraction:hardDiffSide = 0',
-                        'PhaseSpace:pTHatMin = 80.', # changing top pT
                         'Diffraction:doHard = on',
                         'Diffraction:sampleType = 3', # Dynamic gap. Use 3 (MPI-unchecked) or 4 (MPI-checked). Options 1 or 2 will generate diffractive and non-diffractive inclusive events.
                         'SigmaDiffractive:PomFlux = 7', # H1 Fit B parametrisation
@@ -18,7 +17,7 @@ generator = cms.EDFilter("Pythia8GeneratorFilter",
         ),
         py8ProcessSettings = cms.vstring(
             'WeakSingleBoson:ffbar2gmZ = on',
-            'PhaseSpace:pTHatMin = 20.',
+            'PhaseSpace:pTHatMin = 20.', # changing pT
             '23:onMode = off',
             '23:onIfAny = 13' # pdgid(13): Muon, pdgid(11): Electron
         ),
