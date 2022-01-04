@@ -34,7 +34,11 @@ cd ../..
 EVENTS=1000
 
 # cmsDriver command, LHE
-cmsDriver.py Configuration/GenProduction/python/RunIISummer20UL17LHEGEN-fragment.py --python_filename RunIISummer20UL17LHE_cfg.py --eventcontent LHE --customise Configuration/DataProcessing/Utils.addMonitoring --datatier LHE --fileout file:RunIISummer20UL17LHE.root --conditions 106X_mc2017_realistic_v6 --step NONE --filein "/store/group/phys_exotica/PPS-Exo/LHESource/toy_mc_pps.lhe" --era Run2_2017 --no_exec --mc -n $EVENTS || exit $? ;
+
+# S->XZ /eos/cms/store/group/phys_exotica/PPS-Exo/LHESource/toy_mc_pps_XZ.lhe
+# S->XH /eos/cms/store/group/phys_exotica/PPS-Exo/LHESource/toy_mc_pps_XH.lhe
+
+cmsDriver.py Configuration/GenProduction/python/RunIISummer20UL17LHEGEN-fragment.py --python_filename RunIISummer20UL17LHE_cfg.py --eventcontent LHE --customise Configuration/DataProcessing/Utils.addMonitoring --datatier LHE --fileout file:RunIISummer20UL17LHE.root --conditions 106X_mc2017_realistic_v6 --step NONE --filein "/store/group/phys_exotica/PPS-Exo/LHESource/toy_mc_pps_XZ.lhe" --era Run2_2017 --no_exec --mc -n $EVENTS || exit $? ;
 
 # cmsDriver command, GEN
 cmsDriver.py Configuration/GenProduction/python/RunIISummer20UL17LHEGEN-fragment.py --python_filename RunIISummer20UL17GEN_cfg.py --eventcontent RAWSIM --customise Configuration/DataProcessing/Utils.addMonitoring --datatier GEN --fileout file:RunIISummer20UL17GEN.root --conditions 106X_mc2017_realistic_v6 --beamspot Realistic25ns13TeVEarly2017Collision --step GEN --geometry DB:Extended --filein file:RunIISummer20UL17LHE.root --era Run2_2017 --no_exec --mc -n $EVENTS || exit $? ;

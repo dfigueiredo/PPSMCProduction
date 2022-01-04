@@ -21,5 +21,5 @@ cd ../..
 EVENTS=-1
 
 # cmsDriver command
-cmsDriver.py  --python_filename RunIISummer20UL17DIGIPremix_cfg.py --eventcontent PREMIXRAW --customise Configuration/DataProcessing/Utils.addMonitoring --datatier GEN-SIM-DIGI --fileout TOP-RunIISummer20UL17DIGIPremix.root --pileup_input "dbs:/Neutrino_E-10_gun/RunIISummer20ULPrePremix-UL17_106X_mc2017_realistic_v6-v3/PREMIX" --conditions 106X_mc2017_realistic_v6 --step DIGI,DATAMIX,L1,DIGI2RAW --procModifiers premix_stage2 --geometry DB:Extended --filein file:RunIISummer20UL17SIM.root --datamix PreMix --era Run2_2017 --runUnscheduled --no_exec --mc -n $EVENTS || exit $? ;
+cmsDriver.py  --python_filename RunIISummer20UL17DIGIPremix_cfg.py --eventcontent PREMIXRAW --customise Configuration/DataProcessing/Utils.addMonitoring --datatier GEN-SIM-DIGI --fileout RunIISummer20UL17DIGIPremix.root --pileup_input "dbs:/Neutrino_E-10_gun/RunIISummer20ULPrePremix-UL17_106X_mc2017_realistic_v6-v3/PREMIX" --conditions 106X_mc2017_realistic_v6 --step DIGI,DATAMIX,L1,DIGI2RAW --procModifiers premix_stage2 --geometry DB:Extended --filein file:RunIISummer20UL17SIM.root --datamix PreMix --era Run2_2017 --runUnscheduled --no_exec --mc -n $EVENTS || exit $? ;
 
