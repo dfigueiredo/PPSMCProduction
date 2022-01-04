@@ -11,7 +11,7 @@ Download the package from git. After running the script to set the environment, 
 git clone https://github.com/dfigueiredo/PPSMCProduction
 cd PPSMCProduction
 source set_environment.sh
-PREPAREMCGENERATION <enter> (only for the first time to create your working folder)
+PREPAREMCGENERATION2017 or PREPAREMCGENERATION2018 <enter> (only for the first time to create your working folder)
 ```
 
 ## Usage
