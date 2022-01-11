@@ -112,7 +112,8 @@ if MC == True and YEAR == 2018:
 
 process.source = cms.Source("PoolSource",
 #    fileNames = cms.untracked.vstring("/store/user/dmf/crab_dmf_2021-04-28_UTC11-16-01/PYTHIA8-SD-TOP-GEN/PYTHIA8-SD-TOP-MINIAOD-13TEV/210428_091727/0000/RunIISummer20UL17MiniAOD_1.root")
-    fileNames = cms.untracked.vstring("/store/user/dmf/crab_dmf_2021-04-28_UTC11-16-01/PYTHIA8-SD-TOP-GEN/PYTHIA8-SD-TOP-MINIAOD-13TEV/210428_091727/0000/RunIISummer20UL17MiniAOD_103.root")
+#    fileNames = cms.untracked.vstring("/store/user/dmf/crab_dmf_2021-04-28_UTC11-16-01/PYTHIA8-SD-TOP-GEN/PYTHIA8-SD-TOP-MINIAOD-13TEV/210428_091727/0000/RunIISummer20UL17MiniAOD_103.root")
+    fileNames = cms.untracked.vstring("file:PPS-RunIISummer20UL18MiniAODv2-00003.root")
 )
 
 # add pre-mixing of recHits
@@ -131,18 +132,21 @@ if len(ERA) == 2 and YEAR == 2018:
 #process.ctppsPreMixProducer.Verbosity = 0
 
 import FWCore.PythonUtilities.LumiList as LumiList
+
 # use JSON for 2018 PU in order to mix the right events with the right period
-if MC == True and YEAR == 2018:
-  pu_jsonFile = "/eos/project-c/ctpps/Operations/DataExternalConditions/2018/CMSgolden_2RPGood_anyarms_Era"+ERA+".json"
-  process.ctppsPreMixProducer.lumisToProcess = LumiList.LumiList(filename = pu_jsonFile).getVLuminosityBlockRange()
-  print "Using JSON file for PU: "+pu_jsonFile+"\n"
-  process.ctppsPreMixProducer.includeStrips = False
+#if MC == True and YEAR == 2018:
+  #pu_jsonFile = "/eos/project-c/ctpps/Operations/DataExternalConditions/2018/CMSgolden_2RPGood_anyarms_Era"+ERA+".json"
+  #process.ctppsPreMixProducer.lumisToProcess = LumiList.LumiList(filename = pu_jsonFile).getVLuminosityBlockRange()
+  #print "Using JSON file for PU: "+pu_jsonFile+"\n"
+  #process.ctppsPreMixProducer.includeStrips = False
 
 # rng service for premixing
 process.RandomNumberGeneratorService.ctppsPreMixProducer = cms.PSet(initialSeed = cms.untracked.uint32(42))
 
 # number of events
 process.load("FWCore.MessageService.MessageLogger_cfi")
+
+'''
 process.MessageLogger.cerr.FwkReport = cms.untracked.PSet(
   optionalPSet = cms.untracked.bool(True),
   reportEvery = cms.untracked.int32(100),
@@ -178,6 +182,7 @@ process.MessageLogger.logFile = cms.untracked.PSet(
 )
 
 process.options   = cms.untracked.PSet( wantSummary = cms.untracked.bool(False) )
+'''
 
 '''
 ### ADD SOME NEW JET COLLECTIONS                                                                                                                                           
