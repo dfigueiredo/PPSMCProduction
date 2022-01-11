@@ -12,7 +12,7 @@ options = VarParsing ()
 # Here we have defined our own two VarParsing options 
 # add a list of strings for events to process
 options.register ('era',
-				  'B',
+				  'C',
 				  VarParsing.multiplicity.singleton,
 				  VarParsing.varType.string,
 				  "era")
