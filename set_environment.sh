@@ -3,17 +3,26 @@
 #-------------------------------------------------------------------
 
 export PPSFRAMEWORKROOT=`pwd`
-export WORKINGPPSDIR=$PPSFRAMEWORKROOT/working
+export WORKINGPPSDIR2017=$PPSFRAMEWORKROOT/working2017
+export WORKINGPPSDIR2018=$PPSFRAMEWORKROOT/working2018
 
-#if [-d "$WORKINGPPSDIR" -a ! -h "$WORKINGPPSDIR"]
-if [ -d $WORKINGPPSDIR ]
+if [ -d $WORKINGPPSDIR2017 ]
 then 
-   echo -e "\n$WORKINGPPSDIR is present. Nothing is needed to do.\n"
+   echo -e "\n$WORKINGPPSDIR2017 is present. Nothing is needed to do.\n"
 else
    echo -e "\nCreating a working dir.\n"
-   mkdir $PPSFRAMEWORKROOT/working
-   echo -e "\nChecking: $WORKINGPPSDIR\n"
+   mkdir $PPSFRAMEWORKROOT/working2017
+   echo -e "\nChecking: $WORKINGPPSDIR2017\n"
 fi
 
-alias PREPAREMCGENERATION2017="cp $PPSFRAMEWORKROOT/MCProduction/Execution/2017/*.sh $WORKINGPPSDIR/." 
-alias PREPAREMCGENERATION2018="cp $PPSFRAMEWORKROOT/MCProduction/Execution/2018/*.sh $WORKINGPPSDIR/." 
+if [ -d $WORKINGPPSDIR2018 ]
+then
+   echo -e "\n$WORKINGPPSDIR2018 is present. Nothing is needed to do.\n"
+else
+   echo -e "\nCreating a working dir.\n"
+   mkdir $PPSFRAMEWORKROOT/working2018
+   echo -e "\nChecking: $WORKINGPPSDIR2018\n"
+fi
+
+alias PREPAREMCGENERATION2017="cp $PPSFRAMEWORKROOT/MCProduction/Execution/2017/*.sh $WORKINGPPSDIR2017/." 
+alias PREPAREMCGENERATION2018="cp $PPSFRAMEWORKROOT/MCProduction/Execution/2018/*.sh $WORKINGPPSDIR2018/." 
