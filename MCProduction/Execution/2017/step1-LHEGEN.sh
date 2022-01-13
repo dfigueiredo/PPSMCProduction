@@ -38,9 +38,9 @@ EVENTS=1000
 # S->XZ /eos/cms/store/group/phys_exotica/PPS-Exo/LHESource/toy_mc_pps_XZ.lhe
 # S->XH /eos/cms/store/group/phys_exotica/PPS-Exo/LHESource/toy_mc_pps_XH.lhe
 
-cmsDriver.py Configuration/GenProduction/python/RunIISummer20UL17LHEGEN-fragment-XZ.py --python_filename RunIISummer20UL17LHE_cfg.py --eventcontent LHE --customise Configuration/DataProcessing/Utils.addMonitoring --datatier LHE --fileout file:RunIISummer20UL17LHE.root --conditions 106X_mc2017_realistic_v6 --step NONE --filein "/store/group/phys_exotica/PPS-Exo/LHESource/toy_mc_pps_XZ.lhe" --era Run2_2017 --no_exec --mc -n $EVENTS || exit $? ;
+cmsDriver.py Configuration/GenProduction/python/RunIISummer20UL17LHEGEN-fragment.py --python_filename RunIISummer20UL17LHE_toyXZ_cfg.py --eventcontent LHE --customise Configuration/DataProcessing/Utils.addMonitoring --datatier LHE --fileout file:RunIISummer20UL17LHE.root --conditions 106X_mc2017_realistic_v6 --step NONE --filein "/store/group/phys_exotica/PPS-Exo/LHESource/toy_mc_pps_XZ.lhe" --era Run2_2017 --no_exec --mc -n $EVENTS || exit $? ;
 
-cmsDriver.py Configuration/GenProduction/python/RunIISummer20UL17LHEGEN-fragment-XH.py --python_filename RunIISummer20UL17LHE_cfg.py --eventcontent LHE --customise Configuration/DataProcessing/Utils.addMonitoring --datatier LHE --fileout file:RunIISummer20UL17LHE.root --conditions 106X_mc2017_realistic_v6 --step NONE --filein "/store/group/phys_exotica/PPS-Exo/LHESource/toy_mc_pps_XH.lhe" --era Run2_2017 --no_exec --mc -n $EVENTS || exit $? ;
+cmsDriver.py Configuration/GenProduction/python/RunIISummer20UL17LHEGEN-fragment.py --python_filename RunIISummer20UL17LHE_toyXH_cfg.py --eventcontent LHE --customise Configuration/DataProcessing/Utils.addMonitoring --datatier LHE --fileout file:RunIISummer20UL17LHE.root --conditions 106X_mc2017_realistic_v6 --step NONE --filein "/store/group/phys_exotica/PPS-Exo/LHESource/toy_mc_pps_XH.lhe" --era Run2_2017 --no_exec --mc -n $EVENTS || exit $? ;
 
 
 # cmsDriver command, GEN
