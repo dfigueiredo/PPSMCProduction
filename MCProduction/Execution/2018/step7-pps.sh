@@ -25,9 +25,9 @@ cd PPtoPPWWjets/PPtoPPWWjets
 mkdir data
 cd data
 
-wget https://github.com/dfigueiredo/PPSMCProduction/blob/master/MCProduction/Alignments/2018_TS1_TS2.xml -O 2018_TS1_TS2.xml
-wget https://github.com/dfigueiredo/PPSMCProduction/blob/master/MCProduction/Alignments/2018_postTS2.xml  -O 2018_postTS2.xml 
-wget https://github.com/dfigueiredo/PPSMCProduction/blob/master/MCProduction/Alignments/2018_preTS1.xml -O 2018_preTS1.xml
+wget https://github.com/dfigueiredo/PPSMCProduction/raw/master/MCProduction/Alignments/2018_TS1_TS2.xml -O 2018_TS1_TS2.xml
+wget https://github.com/dfigueiredo/PPSMCProduction/raw/master/MCProduction/Alignments/2018_postTS2.xml  -O 2018_postTS2.xml 
+wget https://github.com/dfigueiredo/PPSMCProduction/raw/master/MCProduction/Alignments/2018_preTS1.xml -O 2018_preTS1.xml
 
 cd ../../..
 
