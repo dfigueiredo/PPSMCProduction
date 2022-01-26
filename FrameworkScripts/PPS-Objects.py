@@ -70,16 +70,16 @@ if MC == True and YEAR == 2017 and (ERA == "E" or ERA == "F"):
    process.load("Validation.CTPPS.simu_config.year_2017_postTS2_cff")
 if MC == True and YEAR == 2018 and (ERA == "A" or ERA == "B1"):
    process.load("Validation.CTPPS.simu_config.year_2018_cff")
-   process.ctppsRPAlignmentCorrectionsDataESSourceXML.MisalignedFiles = ["PPtoPPWWjets/PPtoPPWWjets/python/PPS_2018_Alignments/2018_preTS1.xml"]
-   process.ctppsRPAlignmentCorrectionsDataESSourceXML.RealFiles = ["PPtoPPWWjets/PPtoPPWWjets/python/PPS_2018_Alignments/2018_preTS1.xml"]
+   process.ctppsRPAlignmentCorrectionsDataESSourceXML.MisalignedFiles = ["PPtoPPWWjets/PPtoPPWWjets/data/2018_preTS1.xml"]
+   process.ctppsRPAlignmentCorrectionsDataESSourceXML.RealFiles = ["PPtoPPWWjets/PPtoPPWWjets/data/2018_preTS1.xml"]
 if MC == True and YEAR == 2018 and (ERA == "B2" or ERA == "C" or ERA == "D1"):
    process.load("Validation.CTPPS.simu_config.year_2018_cff")
-   process.ctppsRPAlignmentCorrectionsDataESSourceXML.MisalignedFiles = ["PPtoPPWWjets/PPtoPPWWjets/python/PPS_2018_Alignments/2018_TS1_TS2.xml"]
-   process.ctppsRPAlignmentCorrectionsDataESSourceXML.RealFiles = ["PPtoPPWWjets/PPtoPPWWjets/python/PPS_2018_Alignments/2018_TS1_TS2.xml"]
+   process.ctppsRPAlignmentCorrectionsDataESSourceXML.MisalignedFiles = ["PPtoPPWWjets/PPtoPPWWjets/data/2018_TS1_TS2.xml"]
+   process.ctppsRPAlignmentCorrectionsDataESSourceXML.RealFiles = ["PPtoPPWWjets/PPtoPPWWjets/data/2018_TS1_TS2.xml"]
 if MC == True and YEAR == 2018 and (ERA == "D2"):
    process.load("Validation.CTPPS.simu_config.year_2018_cff")
-   process.ctppsRPAlignmentCorrectionsDataESSourceXML.MisalignedFiles = ["PPtoPPWWjets/PPtoPPWWjets/python/PPS_2018_Alignments/2018_postTS2.xml"]
-   process.ctppsRPAlignmentCorrectionsDataESSourceXML.RealFiles = ["PPtoPPWWjets/PPtoPPWWjets/python/PPS_2018_Alignments/2018_postTS2.xml"]
+   process.ctppsRPAlignmentCorrectionsDataESSourceXML.MisalignedFiles = ["PPtoPPWWjets/PPtoPPWWjets/data/2018_postTS2.xml"]
+   process.ctppsRPAlignmentCorrectionsDataESSourceXML.RealFiles = ["PPtoPPWWjets/PPtoPPWWjets/data/2018_postTS2.xml"]
 
 process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_cff')
 from Configuration.AlCa.GlobalTag import GlobalTag

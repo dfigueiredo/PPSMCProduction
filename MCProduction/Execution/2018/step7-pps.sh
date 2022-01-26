@@ -21,8 +21,16 @@ cd CalibPPS/ESProducers
 git clone https://github.com/cms-data/CalibPPS-ESProducers.git data
 cd ../..
 git clone https://github.com/jjhollar/PPtoPPWWjets.git
-cd PPtoPPWWjets/
-cd ..
+cd PPtoPPWWjets/PPtoPPWWjets
+mkdir data
+cd data
+
+wget https://github.com/dfigueiredo/PPSMCProduction/blob/master/MCProduction/Alignments/2018_TS1_TS2.xml -O 2018_TS1_TS2.xml
+wget https://github.com/dfigueiredo/PPSMCProduction/blob/master/MCProduction/Alignments/2018_postTS2.xml  -O 2018_postTS2.xml 
+wget https://github.com/dfigueiredo/PPSMCProduction/blob/master/MCProduction/Alignments/2018_preTS1.xml -O 2018_preTS1.xml
+
+cd ../../..
+
 git clone https://github.com/cms-jet/JetToolbox.git JMEAnalysis/JetToolbox -b jetToolbox_102X_v3
 
 curl -s -k https://raw.githubusercontent.com/dfigueiredo/PPSMCProduction/master/FrameworkScripts/jetToolbox_cff.py --retry 3 --create-dirs -o JMEAnalysis/JetToolbox/python/jetToolbox_cff.py
