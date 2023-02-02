@@ -18,7 +18,7 @@ PREPAREMCGENERATION2017 or PREPAREMCGENERATION2018 <enter> (only for the first t
 
 ```bash
 cd PPSMCProduction/
-cd working/
+cd working2017 or working2018
 source step[1-6]*.sh 
 ```
 
